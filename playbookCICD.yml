@@ -2,7 +2,7 @@
   hosts: webserver
   become: true
   vars:
-   repopath: https://github.com/Sonal0409/DevOpsCodeDemo.git
+   repopath: https://github.com/gowthamkarmegam/DevOpsCodeDemo.git
    dest_path: /tmp/projectcode
   tasks:
   - name: Clone the repo which has the code on the worker node

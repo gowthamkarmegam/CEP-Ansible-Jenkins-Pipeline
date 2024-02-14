@@ -1,12 +1,12 @@
-- name: Playbook to Install Maven and Docker
+- name: Install Maven and Docker on Workder Nodes
   hosts: webserver
   become: true
-  tasks:
-  - name: Update the apt-get repo
-    command: sudo apt-get update
-  - name: Install maven on worker node
-    package: name=maven state=present
-  - name: install docker on worker node
-    package: name=docker-ce state=present
-  - name: Start docker service
-    service: name=docker state=started
+  tasks: 
+   - name: Update apt-get on the Worker Nodes
+     command: sudo apt-get update
+   - name: Install Maven
+     package: name=maven state=present
+   - name: Install Docker
+     package: name=docker-ce state=present
+   - name: Start the Docker
+     service: name=docker state=started
